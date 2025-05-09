@@ -7,6 +7,7 @@ const bodyParser = require("body-parser");
 
 const userRoutes = require("./routes/user.routes.js");
 const videoRoutes = require("./routes/video.routes.js");
+const commentRoutes = require("./routes/comment.route.js");
 
 const app = express();
 app.use(cors());
@@ -25,6 +26,7 @@ connectDb();
 
 app.use("/api/v1/user", userRoutes);
 app.use("/api/v1/video", videoRoutes);
+app.use("/api/v1/comment", commentRoutes);
 
 app.listen(port, () => {
   console.log(`Server is running on port: ${port}`);
